@@ -82,6 +82,8 @@ class AkairoHandler extends EventEmitter {
         mod.filepath = filepath;
         mod.client = this.client;
         mod.handler = this;
+        mod.channel = this.handler.defaultChannel;
+
         this.modules.set(mod.id, mod);
 
         if (mod.categoryID === 'default' && this.automateCategories) {

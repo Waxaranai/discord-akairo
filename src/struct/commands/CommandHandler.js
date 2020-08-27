@@ -29,6 +29,7 @@ class CommandHandler extends AkairoHandler {
         commandUtil,
         commandUtilLifetime = 3e5,
         commandUtilSweepInterval = 3e5,
+        defaultChannel = null,
         defaultCooldown = 0,
         ignoreCooldown = client.ownerID,
         ignorePermissions = [],
@@ -147,6 +148,11 @@ class CommandHandler extends AkairoHandler {
          */
         this.defaultCooldown = defaultCooldown;
 
+        /**
+         * Default channel for commands.
+         * @type {?string}
+         */
+        this.defaultChannel = defaultChannel;
         /**
          * ID of user(s) to ignore cooldown or a function to ignore.
          * @type {Snowflake|Snowflake[]|IgnoreCheckPredicate}

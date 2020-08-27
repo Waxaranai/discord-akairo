@@ -579,6 +579,7 @@ declare module 'discord-akairo' {
         commandUtil?: boolean;
         commandUtilLifetime?: number;
         commandUtilSweepInterval?: number;
+        defaultChannel?: 'guild' | 'dm' | null;
         defaultCooldown?: number;
         fetchMembers?: boolean;
         handleEdits?: boolean;

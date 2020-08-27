@@ -201,7 +201,7 @@ declare module 'discord-akairo' {
         public commandUtilSweepInterval: number;
         public cooldowns: Collection<string, { [id: string]: CooldownData }>;
         public defaultCooldown: number;
-        public defaultChannel: string;
+        public defaultChannel: 'guild' | 'dm' | null;
         public directory: string;
         public fetchMembers: boolean;
         public handleEdits: boolean;
@@ -550,7 +550,7 @@ declare module 'discord-akairo' {
         args?: ArgumentOptions[] | ArgumentGenerator;
         argumentDefaults?: DefaultArgumentOptions;
         before?: BeforeAction;
-        channel?: 'guild' | 'dm';
+        channel?: 'guild' | 'dm' | null;
         clientPermissions?: PermissionResolvable | PermissionResolvable[] | MissingPermissionSupplier;
         condition?: ExecutionPredicate;
         cooldown?: number;
@@ -580,7 +580,7 @@ declare module 'discord-akairo' {
         commandUtil?: boolean;
         commandUtilLifetime?: number;
         commandUtilSweepInterval?: number;
-        defaultChannel?: string;
+        defaultChannel?: 'guild' | 'dm' | null;
         defaultCooldown?: number;
         fetchMembers?: boolean;
         handleEdits?: boolean;

@@ -2,6 +2,7 @@ const AkairoError = require('../util/AkairoError');
 const { AkairoHandlerEvents } = require('../util/Constants');
 const AkairoModule = require('./AkairoModule');
 const Category = require('../util/Category');
+const Command = require('./commands/Command');
 const { Collection } = require('discord.js');
 const EventEmitter = require('events');
 const fs = require('fs');
@@ -82,7 +83,7 @@ class AkairoHandler extends EventEmitter {
         mod.filepath = filepath;
         mod.client = this.client;
         mod.handler = this;
-        mod.channel = this.handler.defaultChannel;
+        if (mod instanceof Command) mod.channel = this.defaultChannel;
 
         this.modules.set(mod.id, mod);
 

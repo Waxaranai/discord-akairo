@@ -83,7 +83,7 @@ class AkairoHandler extends EventEmitter {
         mod.filepath = filepath;
         mod.client = this.client;
         mod.handler = this;
-        if (mod instanceof Command) mod.channel = this.defaultChannel ? this.defaultChannel : mod.channel;
+        if (mod instanceof Command && this.defaultChannel) mod.channel = mod.channel === undefined ? undefined : this.defaultChannel ? this.defaultChannel : mod.channel;
 
         this.modules.set(mod.id, mod);
 
